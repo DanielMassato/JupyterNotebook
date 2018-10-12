@@ -1,0 +1,11 @@
+import csv
+f = open('SalesJan2009.csv')
+leitor_csv = csv.DictReader(f)
+
+dicionario = next(leitor_csv)
+cont = 0
+for i in leitor_csv:
+    x = i['Payment_Type']
+    if x == 'Visa':
+        cont = cont + 1
+print(cont)
